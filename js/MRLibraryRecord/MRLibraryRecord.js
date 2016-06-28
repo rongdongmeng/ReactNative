@@ -28,10 +28,9 @@ export default class MRLibraryRecord extends Component {
       rowData: this.props.rowData,
       authors: [],
     }
-    //alert(MR_RECORD_REQUSET_URL+this.props.rowData.id);
+
     let url = MR_RECORD_REQUSET_URL + this.props.rowData.id;
     this.getData(url);
-    //alert(this.state.authors);
   }
 
   getData(reqUrl){
@@ -45,12 +44,9 @@ export default class MRLibraryRecord extends Component {
     fetch(reqUrl, reqInit)
     .then((response) => response.json())
     .then((responseData) => {
-      //alert(responseData.obj.medicalCaseAuthors);
-    //alert(responseData.obj.medicalCaseVo.abstractAbbr);
         this.setState({
           recordData : responseData.obj.medicalCaseVo.abstractAbbr,
           authors: responseData.obj.medicalCaseAuthors,
-          //this.state.dataSource.cloneWithRows(),
           loaded:true,
         });
     })

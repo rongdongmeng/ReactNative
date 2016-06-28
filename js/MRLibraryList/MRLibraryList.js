@@ -45,7 +45,7 @@ export default class MRLibraryList extends React.Component {
                     body: JSON.stringify({
                       'categoryId':3,
                       'pageIndex':1,
-                      'pageSize':20,
+                      'pageSize':100,
                     }),
                  };
 
